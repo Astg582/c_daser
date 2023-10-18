@@ -28,9 +28,14 @@ int main()
 
 	int** mArr = aloc_M(s);
 	print(mArr, s);
-	del(mArr, s);
+	
 	printf("Auxiliary diagonal sum = %d \n", d_Aux(mArr, s));
+    
+
+del(mArr, s);
 }
+
+
 
 
 //alocating matrix
@@ -88,13 +93,13 @@ int d_Aux(int** arr, int s)
 			
 			if(i  == j)
 			{
-				principal += *(j + *(arr + i));
+				principal += arr[i][j];
 				
 			}
 			
 			if(j == s - 1 - i)
 			{
-				secondary += *(j + *(arr +i));
+				secondary += arr[i][j];
 
 			}
 		}
