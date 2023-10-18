@@ -82,26 +82,27 @@ int d_Aux(int** arr, int s)
 	int principal = 0;
 	int secondary = 0;
 	for(int i = 0; i < s; ++i)
-	{	printf("1 for i = %d\n", i);
+	{
 		for(int j = 0; j < s; ++j)
 		{
 			
 			if(i  == j)
 			{
-				principal += arr[i][j];
-				printf("principal = %d\n", principal);
+				principal += *(j + *(arr + i));
+				
 			}
 			
-			if((i + j) == s -1)
+			if(j == s - 1 - i)
 			{
-				secondary += arr[i][j];
+				secondary += *(j + *(arr +i));
 
 			}
-			 printf(" 2 for j = %d\n", j);
-
 		}
 		
 	}	
+
+    printf("principal = %d\n", principal);
+    //printf("secondary = %d\n", secondary);
 	return secondary;
 }
 
